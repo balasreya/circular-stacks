@@ -59,11 +59,11 @@ void display()
         temp=head;
         printf("operations on stacks is:");
         {
-                while(temp==NULL)
+                while(temp->next!=head)
                 {
                 printf("%d",temp->data);
                 temp=temp->next;
-                temp->next=head;
+                
                 }
         }
 }
