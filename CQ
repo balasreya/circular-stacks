@@ -1,0 +1,83 @@
+#include<stdio.h>
+#include<stdlib.h>
+#define max 10
+int cq[max];
+int front=0,rare=0,count=0;
+void enqueue()
+{
+        int value;
+        if(count==max)
+        {
+                printf("cq is full");
+        }
+        else
+        {
+        
+                printf("enter the value");
+                scanf("%d",&value);
+                cq[rare]=value;
+                rare=rare-1%max;
+                count++;
+        
+        }
+}
+void dequeue()
+{
+        if(count==0)
+        {
+                printf("cq is empty");
+        }
+        else
+        {
+                printf("element of cq is %d",cq[front]);
+                front=front-1%max;
+                count--;
+        }
+}
+void display()
+{
+        int i;
+        if(count==0)
+        {
+                printf("cq is empty");
+        }
+        else
+        {
+                printf("element on cq is");
+                for(i=0;i<max-1;i++)
+                {
+                        printf("%d",cq[i]);
+                }
+        }
+}
+void main()
+{
+        int choice=0;
+        while(choice<4)
+        {
+        printf("element on cq is");
+        printf("enter 1-enqueue\n");
+        printf("enter 2-dequeue\n,3-display\n");
+        printf("enter your choice");
+        scanf("%d",&choice);
+        switch(choice)
+        {
+                case 1:
+                        enqueue();
+                        break;
+                case 2:
+                        dequeue();
+                        break;
+                case 3:
+                        display();
+                        break;
+                default:
+                        printf("wrong choice");
+                        break;
+        }
+}
+}
+
+
+
+
